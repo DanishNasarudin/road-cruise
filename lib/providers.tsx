@@ -1,14 +1,12 @@
 import React from "react";
 import { ThemeProvider } from "./theme-provider";
 
-type Props = {};
-
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="light"
         enableSystem
         disableTransitionOnChange
       >

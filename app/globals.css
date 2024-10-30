@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  height: 100%;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: "Inter", "sans-serif";
 }
 
 @layer utilities {
@@ -76,4 +81,9 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
