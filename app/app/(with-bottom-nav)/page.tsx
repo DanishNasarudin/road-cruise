@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import AppTopNavbar from "./(app-components)/AppTopNavbar";
-import CarouselSection from "./(app-components)/CarouselSection";
-import SearchBar from "./(app-components)/SearchBar";
+import AppTopNavbar from "../(app-components)/AppTopNavbar";
+import CarouselSection from "../(app-components)/CarouselSection";
+import SearchBar from "../(app-components)/SearchBar";
 
 type Props = {};
 

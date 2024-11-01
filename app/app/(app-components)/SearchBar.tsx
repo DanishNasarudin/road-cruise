@@ -13,7 +13,7 @@ const SearchBar = (props: Props) => {
     <div className="flex gap-4 px-4">
       <Input
         onChange={(e) => setSearch(e.currentTarget.value)}
-        className={"rounded-lg w-full"}
+        className={"rounded-lg w-full text-base"}
         isSearch={true}
         placeholder={"Search for roads.."}
       />

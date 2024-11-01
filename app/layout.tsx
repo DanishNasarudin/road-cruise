@@ -11,7 +11,11 @@ export const metadata: Metadata = {
     template: "%s | Road Cruise",
   },
   description: "Road Cruise by Danish Nasarudin",
+  appleWebApp: true,
 };
+// export const viewport: Viewport = {
+//   maximumScale: 1,
+// };
 
 export default function RootLayout({
   children,
