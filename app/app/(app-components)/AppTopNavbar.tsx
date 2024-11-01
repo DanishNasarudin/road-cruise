@@ -5,7 +5,7 @@ type Props = {};
 
 const AppTopNavbar = (props: Props) => {
   return (
-    <nav className="flex justify-between px-4 py-8 items-center">
+    <nav className="z-[10] flex justify-between px-4 py-8 items-center">
       <p>Road Cruise</p>
       <div className="flex gap-4">
         <Button
