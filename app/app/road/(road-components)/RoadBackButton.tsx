@@ -3,9 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeftIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-type Props = {};
-
-const RoadBackButton = (props: Props) => {
+const RoadBackButton = () => {
   const router = useRouter();
   return (
     <Button

@@ -13,11 +13,9 @@ import React from "react";
 import RoadCarousel from "./RoadCarousel";
 import RoadDetailCell from "./RoadDetailCell";
 
-type Props = {};
-
 const snapPoints = ["400px", "600px", 1];
 
-const RoadDrawer = (props: Props) => {
+const RoadDrawer = () => {
   const [snap, setSnap] = React.useState<number | string | null>(snapPoints[0]);
 
   const modalTrigger = snap === 1 ? true : false; // CHECK THIS WHY IS IT NOT WORKING

@@ -2,9 +2,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ShareIcon } from "lucide-react";
 
-type Props = {};
-
-const RoadBotNavbar = (props: Props) => {
+const RoadBotNavbar = () => {
   return (
     <footer
       className={cn(

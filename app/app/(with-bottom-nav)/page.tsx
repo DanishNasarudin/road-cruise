@@ -3,9 +3,7 @@ import AppTopNavbar from "../(app-components)/AppTopNavbar";
 import CarouselSection from "../(app-components)/CarouselSection";
 import SearchBar from "../(app-components)/SearchBar";
 
-type Props = {};
-
-const MainApp = (props: Props) => {
+const MainApp = () => {
   return (
     <main className="relative">
       <AppTopNavbar />

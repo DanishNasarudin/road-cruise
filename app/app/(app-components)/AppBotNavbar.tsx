@@ -2,9 +2,7 @@ import { cn } from "@/lib/utils";
 import { BellIcon, HomeIcon, MapPinPlusIcon } from "lucide-react";
 import ButtonNavbar from "./ButtonNavbar";
 
-type Props = {};
-
-const AppBotNavbar = (props: Props) => {
+const AppBotNavbar = () => {
   return (
     <footer
       className={cn(

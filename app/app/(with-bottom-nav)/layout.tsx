@@ -1,7 +1,5 @@
 import AppBotNavbar from "../(app-components)/AppBotNavbar";
 
-type Props = {};
-
 const AppLayout = ({
   children,
 }: Readonly<{

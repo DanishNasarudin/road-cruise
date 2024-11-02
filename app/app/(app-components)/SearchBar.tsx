@@ -4,9 +4,7 @@ import { Input } from "@/components/ui/input";
 import { SlidersHorizontalIcon } from "lucide-react";
 import React from "react";
 
-type Props = {};
-
-const SearchBar = (props: Props) => {
+const SearchBar = () => {
   const [search, setSearch] = React.useState("");
 
   return (
