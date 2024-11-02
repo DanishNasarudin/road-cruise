@@ -9,7 +9,8 @@ const AppBotNavbar = (props: Props) => {
     <footer
       className={cn(
         "fixed w-full bottom-0 flex justify-evenly py-4 bg-white border-t-zinc-300 border-t-[1px]",
-        "shadow-black drop-shadow-[0_-5px_30px_rgba(0,0,0,0.2)]"
+        "shadow-black drop-shadow-[0_-5px_10px_rgba(0,0,0,0.2)]",
+        "!max-h-[80px]"
       )}
     >
       <ButtonNavbar name={"Home"} icon={<HomeIcon />} href={"/app"} />

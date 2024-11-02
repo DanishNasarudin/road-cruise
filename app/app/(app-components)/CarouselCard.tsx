@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 type Props = {
   data: {
@@ -12,7 +13,8 @@ type Props = {
 
 const CarouselCard = ({ data }: Props) => {
   return (
-    <div
+    <Link
+      href={"/app/road/2"}
       className={cn(
         "bg-white border-[1px] border-zinc-300 rounded-xl overflow-hidden",
         "grid auto-rows-fr !aspect-[3/2] max-h-[200px] w-[300px]"
@@ -37,7 +39,7 @@ const CarouselCard = ({ data }: Props) => {
           <p className="text-xs">Est.: {data.road_time} mins</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
