@@ -1,14 +1,9 @@
-import db from "@/db/db";
+import AppTopNavbar from "@/components/app/AppTopNavbar";
+import CarouselSection from "@/components/app/CarouselSection";
+import SearchBar from "@/components/app/SearchBar";
 import { cn } from "@/lib/utils";
-import AppTopNavbar from "../(app-components)/AppTopNavbar";
-import CarouselSection from "../(app-components)/CarouselSection";
-import SearchBar from "../(app-components)/SearchBar";
 
 const MainApp = async () => {
-  const user = await db.query.user.findMany({});
-
-  console.log(user);
-
   return (
     <main className="relative">
       <AppTopNavbar />

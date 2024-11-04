@@ -1,4 +1,4 @@
-import AppBotNavbar from "../(app-components)/AppBotNavbar";
+import AppBotNavbar from "@/components/app/AppBotNavbar";
 
 const AppLayout = ({
   children,

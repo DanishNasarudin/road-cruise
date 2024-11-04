@@ -1,6 +1,6 @@
-import RoadBackButton from "../(road-components)/RoadBackButton";
-import RoadBotNavbar from "../(road-components)/RoadBotNavbar";
-import RoadDrawer from "../(road-components)/RoadDrawer";
+import RoadBackButton from "@/components/road/RoadBackButton";
+import RoadBotNavbar from "@/components/road/RoadBotNavbar";
+import RoadDrawer from "@/components/road/RoadDrawer";
 
 const RoadPage = () => {
   return (
