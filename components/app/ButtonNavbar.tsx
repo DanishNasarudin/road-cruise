@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { CarIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -10,7 +11,11 @@ type Props = {
   href: string;
 };
 
-const ButtonNavbar = ({ name, icon, href }: Props) => {
+const ButtonNavbar = ({
+  name = "NavName",
+  icon = <CarIcon />,
+  href = "/",
+}: Props) => {
   const pathname = usePathname();
 
   const checkRoute = pathname === href;

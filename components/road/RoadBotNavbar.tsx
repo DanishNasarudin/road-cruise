@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import { ShareIcon } from "lucide-react";
 
 const RoadBotNavbar = () => {
+  // Need to add function to check if user location is at the starting point or not
+  // If not, then Start Drive button change to Go to Starting Point
   return (
     <footer
       className={cn(

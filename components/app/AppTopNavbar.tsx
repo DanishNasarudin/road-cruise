@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { HeartIcon, UserCircle2Icon } from "lucide-react";
 
-type Props = {};
-
-const AppTopNavbar = (props: Props) => {
+const AppTopNavbar = () => {
   return (
     <nav className="z-[10] flex justify-between px-4 py-8 items-center">
       <p>Road Cruise</p>

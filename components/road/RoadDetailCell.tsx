@@ -17,7 +17,7 @@ const RoadDetailCell = ({
         {icon}
         <p className="text-[10px]">{title}</p>
       </div>
-      <p className="text-base font-bold">{value}</p>
+      <p className="text-sm font-bold text-center">{value}</p>
     </div>
   );
 };

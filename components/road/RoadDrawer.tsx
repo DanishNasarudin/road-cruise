@@ -8,17 +8,56 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer";
 import { cn } from "@/lib/utils";
-import { HeartIcon } from "lucide-react";
+import { Road } from "@/types/Road";
+import { CarIcon, HeartIcon, SplineIcon, TimerIcon } from "lucide-react";
 import React from "react";
 import RoadCarousel from "./RoadCarousel";
 import RoadDetailCell from "./RoadDetailCell";
 
+type Props = {
+  data?: Road;
+};
+
 const snapPoints = ["400px", "600px", 1];
 
-const RoadDrawer = () => {
+const RoadDrawer = ({
+  data = {
+    title: "Testing Title",
+    location: "Testing Location",
+    reviews: [],
+    reviewAvgRating: 0,
+    roadLength: 1340,
+    roadTime: 210,
+  },
+}: Props) => {
   const [snap, setSnap] = React.useState<number | string | null>(snapPoints[0]);
 
-  const modalTrigger = snap === 1 ? true : false; // CHECK THIS WHY IS IT NOT WORKING
+  // Calculate roadTime if its more than 60mins -------------------
+
+  const roadTimeHrs = Math.floor(data.roadTime / 60);
+
+  const roadTimeMins =
+    (data.roadTime / 60 - Math.floor(data.roadTime / 60)) * 60;
+
+  const roadTimeString = `${roadTimeHrs} ${roadTimeHrs > 1 ? `Hrs` : `Hr`} ${
+    roadTimeMins > 0 ? `${roadTimeMins.toFixed(0)} Mins` : ``
+  }`;
+
+  // Calculate roadLength if its more than 1000meters --------------
+
+  const roadLengthKm = data.roadLength / 1000;
+
+  const roadLengthString = `${
+    data.roadLength >= 1000
+      ? `${roadLengthKm.toFixed(2)} KM`
+      : `${data.roadLength} Meters`
+  }`;
+
+  // ++ Need a server function to check if the road displayed is their favourite -----
+
+  const checkFavourite = false;
+
+  // ++ Need a server function that takes the user id and road id, then add to userFavRoad ----
 
   return (
     <>
@@ -42,14 +81,15 @@ const RoadDrawer = () => {
             >
               <section className="px-6 pt-6 flex justify-between align-middle">
                 <div className="flex flex-col gap-2">
-                  <DrawerTitle>Testing</DrawerTitle>
-                  <DrawerDescription>Location heree</DrawerDescription>
+                  <DrawerTitle>{data.title}</DrawerTitle>
+                  <DrawerDescription>{data.location}</DrawerDescription>
                 </div>
                 <Button
                   variant={"ghost"}
                   className="hover:bg-transparent w-[24px]"
                   size={"icon"}
                   asChild
+                  // onclick server function to add to favourite ---
                 >
                   <HeartIcon />
                 </Button>
@@ -58,11 +98,28 @@ const RoadDrawer = () => {
                 <div className="w-full h-[1px] bg-zinc-300" />
               </div>
               <section className="px-6 flex">
-                <RoadDetailCell title={"Road Length"} value={"5 KM"} />
-                <RoadDetailCell title={"Travel Time"} value={"10 Mins"} />
-                <RoadDetailCell title={"Road Type"} value={"Loop"} />
+                <RoadDetailCell
+                  title={"Road Length"}
+                  value={roadLengthString}
+                  icon={<CarIcon size={18} />}
+                />
+                <RoadDetailCell
+                  title={"Travel Time"}
+                  value={
+                    data.roadTime >= 60
+                      ? roadTimeString
+                      : `${data.roadTime} Mins`
+                  }
+                  icon={<TimerIcon size={18} />}
+                />
+                <RoadDetailCell
+                  title={"Road Type"}
+                  value={"Loop"}
+                  icon={<SplineIcon size={18} />}
+                />
               </section>
               <RoadCarousel />
+              {/* Anything below here is placeholder for reviews */}
               <RoadCarousel />
               <RoadCarousel />
               <RoadCarousel />

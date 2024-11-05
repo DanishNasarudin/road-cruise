@@ -1,17 +1,21 @@
 import { cn } from "@/lib/utils";
+import { Road } from "@/types/Road";
 import Link from "next/link";
 
 type Props = {
-  data: {
-    title: string;
-    location: string;
-    review: string;
-    road_length: number;
-    road_time: number;
-  };
+  data?: Road;
 };
 
-const CarouselCard = ({ data }: Props) => {
+const CarouselCard = ({
+  data = {
+    title: "Title",
+    location: "Genting, Pahang.",
+    reviews: [],
+    reviewAvgRating: 5,
+    roadLength: 5,
+    roadTime: 10,
+  },
+}: Props) => {
   return (
     <Link
       href={"/app/road/2"}
@@ -31,12 +35,12 @@ const CarouselCard = ({ data }: Props) => {
         <div className="flex flex-col">
           <p className="text-xs font-bold">{data.title}</p>
           <p className="text-xs">{data.location}</p>
-          <p className="text-xs">{data.review}</p>
+          {/* <p className="text-xs">{data.review}</p> */}
         </div>
         <div className="flex gap-2">
-          <p className="text-xs">Length: {data.road_length} km</p>
+          <p className="text-xs">Length: {data.roadLength} km</p>
           <p className="text-xs">|</p>
-          <p className="text-xs">Est.: {data.road_time} mins</p>
+          <p className="text-xs">Est.: {data.roadTime} mins</p>
         </div>
       </div>
     </Link>

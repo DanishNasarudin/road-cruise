@@ -3,11 +3,12 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { Road } from "@/types/Road";
 import CarouselCard from "./CarouselCard";
 
 type Props = {
   title?: string;
-  data?: any;
+  data?: Road[];
 };
 
 const CarouselSection = ({
@@ -16,23 +17,26 @@ const CarouselSection = ({
     {
       title: "Title",
       location: "Genting, Pahang.",
-      review: "review",
-      road_length: 5,
-      road_time: 10,
+      reviews: [],
+      reviewAvgRating: 5,
+      roadLength: 5,
+      roadTime: 10,
     },
     {
       title: "Title2",
       location: "Pulau Penang, Malaysia.",
-      review: "review",
-      road_length: 4,
-      road_time: 20,
+      reviews: [],
+      reviewAvgRating: 5,
+      roadLength: 5,
+      roadTime: 10,
     },
     {
       title: "Title3",
       location: "Segamat, Johor.",
-      review: "review",
-      road_length: 2,
-      road_time: 15,
+      reviews: [],
+      reviewAvgRating: 5,
+      roadLength: 5,
+      roadTime: 10,
     },
   ],
 }: Props) => {
@@ -41,7 +45,7 @@ const CarouselSection = ({
       <h3 className="px-4 text-base font-bold">{title}</h3>
       <Carousel className="w-full max-w-[100vw] [&>div]:px-4">
         <CarouselContent className="[&>div]:basis-auto ">
-          {data.map((item: any, index: number) => (
+          {data.map((item: Road, index: number) => (
             <CarouselItem key={index}>
               <CarouselCard data={item} />
             </CarouselItem>
