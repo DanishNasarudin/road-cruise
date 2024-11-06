@@ -24,6 +24,7 @@ export const user = pgTable(
     email: varchar({ length: 50 }),
     createdAt: timestamp().notNull().defaultNow(),
     updatedAt: timestamp()
+      .defaultNow()
       .notNull()
       .$onUpdateFn(() => sql`NOW()`),
   },
@@ -40,6 +41,7 @@ export const userRole = pgTable("userRole", {
   name: varchar().notNull(),
   createdAt: timestamp().notNull().defaultNow(),
   updatedAt: timestamp()
+    .defaultNow()
     .notNull()
     .$onUpdateFn(() => sql`NOW()`),
 });
@@ -59,6 +61,7 @@ export const route = pgTable(
     type: varchar({ length: 20 }).notNull(),
     createdAt: timestamp().notNull().defaultNow(),
     updatedAt: timestamp()
+      .defaultNow()
       .notNull()
       .$onUpdateFn(() => sql`NOW()`),
   },
@@ -104,6 +107,7 @@ export const review = pgTable(
     comment: text(),
     createdAt: timestamp().notNull().defaultNow(),
     updatedAt: timestamp()
+      .defaultNow()
       .notNull()
       .$onUpdateFn(() => sql`NOW()`),
   },
